@@ -1,0 +1,147 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ---- Header ---- */
+header {
+    padding: 10px 0;
+    background-color: #fd4d4f;
+}
+
+header>.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.brand-title {
+    color: #fff;
+    padding: 0 4px;
+}
+
+nav>ul {
+    list-style: none;
+}
+
+nav>ul>li {
+    display: inline;
+}
+
+a {
+    color: #fff;
+}
+
+
+
+
+/* ---- List Content ---- */
+.list {
+    margin-bottom: 40px;
+}
+
+.list-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.list-title::after {
+    display: block;
+    margin: 14px auto 0;
+    content: '';
+    width: 40px;
+    border-top: 4px solid #5c0211;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+}
+
+.list-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.list-content-item {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 23%;
+    padding: 4px;
+    background-color: #fef0ef;
+    border: 1px solid #f7c7c2;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.4s ease-in-out;
+}
+
+.list-content-item:hover {
+    transform: translateY(-4px);
+}
+
+.list-content-item>img {
+    display: block;
+    width: 100%;
+    /* height: 320px; */
+}
+
+.list-content-item>span {
+    color: #333;
+}
+
+/* ---- Footer ---- */
+footer {
+    background-color: #810115;
+    color: #fff;
+}
+
+.talking {
+    display: flex;
+    padding: 20px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 12px;
+    border-top: 1px solid #5f000e;
+    padding: 14px;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    header>.container {
+        flex-direction: column;
+    }
+    nav {
+        padding: 0 12px;
+       text-align: right; 
+    }
+    .talking {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .talking>p{
+        padding: 0 12px;
+    }
+
+
+}
