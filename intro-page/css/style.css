@@ -76,6 +76,7 @@ a {
 
 .list-content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
 }
@@ -84,6 +85,7 @@ a {
     display: inline-block;
     box-sizing: border-box;
     width: 23%;
+    margin-top: 10px;
     padding: 4px;
     background-color: #fef0ef;
     border: 1px solid #f7c7c2;
@@ -141,6 +143,10 @@ footer {
     }
     .talking>p{
         padding: 0 12px;
+    }
+
+    .list-content-item {
+        width: 49%;
     }
 
 
