@@ -54,6 +54,10 @@ Danmu.prototype.pause = function () {
     }
 }
 
+Danmu.prototype.remove = function () {
+    this._end()
+}
+
 Danmu.prototype.resume = function () {
     if (this.type === "scroll") {
         const domWidth = this.dom.width()
@@ -71,6 +75,12 @@ Danmu.prototype.resume = function () {
         this._setTimeout()
     }
 }
+/**
+ * re-config the danmu instance 
+ * @param {*} viewport 
+ * @param {*} message 
+ * @param {*} options 
+ */
 Danmu.prototype.config = function (viewport, message, options) {
     this.viewport = viewport
     this.text = message;
@@ -105,13 +115,14 @@ Danmu.prototype._start = function () {
     // need append the danmu element then get danmu height value
     // if not, will be get 0
     this.viewport.append(this.dom)
+    this.dom.show()
 
     this.dom.css({
         position: "absolute",
         right: -this.dom.width(),
         top: this.getPosition(this.viewport.height()),
         opacity: 1,
-        color: this.randomColor ? this.randomColor : this.color
+        color: this.randomColor ? randomColor() : this.color
     })
 
     if (this.type === 'scroll') {
@@ -138,13 +149,9 @@ Danmu.prototype._setTimeout = function () {
 Danmu.prototype._end = function () {
     if (this.type === "scroll") {
         this.dom.finish()
-    } else {
-        // TODO: add fade out
-        this.dom.hide()
-    }
-
-    console.log(this.done);
-    this.done && this.done()
+    }    
+    this.dom.hide()
+    this.done && this.done(this)
 }
 
 /**
@@ -155,7 +162,7 @@ Danmu.prototype._end = function () {
 Danmu.prototype.getPosition = function (viewportHeight) {
     const domHeight = this.dom.height()
     if (this.randomPosition) {
-        return 0
+        return random(0, viewportHeight - domHeight)
     }
     switch (this.position) {
         case "top":
@@ -175,7 +182,7 @@ function DanmuWall(viewportElement) {
         overflow: 'hidden'
     })
     // danmu Queue
-    this.queue = new Map()
+    this.queue = []
     // cache  
     this.pool = []
 }
@@ -185,29 +192,37 @@ DanmuWall.prototype.send = function (message, options) {
         throw new Error('danmu message need a string!')
     }
     const originCB = options.done;
-    options.done = () => {
+    options.done = (danmu) => {
         originCB && originCB()
-        this.pool.push(this.queue.get(message))
-        this.queue.delete(message)
-        console.log(this.pool);
+        this.remove(danmu)
     }
-    if (!this.queue.has(message)) {
-        const danmu = this.getDanmu(message, options)
-        this.queue.set(message, danmu)
-        danmu.play()
-    }
+    const danmu = this.getDanmu(message, options)
+    this.queue.push(danmu)
+    danmu.play()
 
+}
+
+DanmuWall.prototype.remove = function (danmu) {
+    this.queue = this.queue.filter(item => item !== danmu)
+    this.pool.push(danmu)
 }
 
 DanmuWall.prototype.getDanmu = function (message, options) {
     let danmu;
     if (this.pool.length > 0) {
         danmu = this.pool.shift()
+        // re-config the danmu instance
+        danmu.config(this.viewport, message, options)
     } else {
         // make danmu and bind mouse event
         danmu = new Danmu(this.viewport, message, options)
     }
     return danmu
+}
+DanmuWall.prototype.clear = function () {
+    this.queue.forEach(danmu => {
+        danmu.remove()
+    })
 }
 
 
@@ -219,34 +234,29 @@ $(document).ready(function () {
     const type = $("#type")
     const color = $("#color")
     const submit = $(".submit")
-    const randomP = $("#randomP")
-    const randomC = $("#randomC")
-
-    let randomPosition = false;
-    let randomColor = false;
-
-    randomP.on("change", function () {
-        randomPosition = !randomPosition
-    })
-    randomC.on("change", function () {
-        randomColor = !randomColor
-    })
+    const clear = $(".clear")
 
     const danmuWall = new DanmuWall(viewport)
 
     submit.on("click", function () {
-        // try {
-        const options = {
-            type: type.val(), position: position.val(), duration: 4000,
-            color: color.val(),
-            randomColor,
-            randomPosition,
-        }
-        danmuWall.send(message.val(), options)
-        // } catch (e) {
-        //     alert(e.message)
+        try {
+            const randomPosition = position.val() === 'random';
+            const randomColor = color.val() === 'random';
 
-        // }
+            const options = {
+                type: type.val(), position: position.val(), duration: 4000,
+                color: color.val(),
+                randomColor,
+                randomPosition,
+            }
+            danmuWall.send(message.val(), options)
+        } catch (e) {
+            alert(e.message)
+        }
+    })
+
+    clear.on("click", function () {
+        danmuWall.clear()
     })
 
 })
