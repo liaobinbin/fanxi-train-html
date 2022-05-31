@@ -1,0 +1,33 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #dddcdc;
+}
+
+.viewport {
+    flex: 1;
+    margin: 20px 40px 0;
+    background-color: #fff;
+    border: 1px solid #333;
+}
+.danmu {
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.control {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.control-buttons {
+    margin-left: 10px;
+}

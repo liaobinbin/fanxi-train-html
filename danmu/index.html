@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danmu</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="viewport"></div>
+        <div class="control">
+            <input type="text" id="message">
+            <label for="type">Type</label>
+            <select name="type" id="type">
+                <option value="scroll">Scroll</option>
+                <option value="fixed">Fixed</option>
+            </select>
+            <label for="position">Positon</label>
+            <select name="position" id="position">
+                <option value="top">top</option>
+                <option value="mid">mid</option>
+                <option value="bottom">bottom</option>
+            </select>
+            <label for="color">Color</label>
+            <select name="color" id="color">
+                <option value="red">red</option>
+                <option value="green">green</option>
+                <option value="blue">blue</option>
+            </select>
+            <input type="checkbox" name="randomP" id="randomP" />
+            <label for="randomP">Random Position</label>
+            <div class="control-buttons">
+                <button class="submit">Submit</button>
+                <button class="clear">Clear</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
