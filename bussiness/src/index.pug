@@ -1,4 +1,13 @@
 extends _partial/layout.pug
+include _partial/main-title.pug
+include _partial/card.pug
 
 block pagetitle
-    title 企业站
+  title 企业站
+block main
+  +maintitle({title: '团队介绍', eng: 'Team to introduce'})
+  .flex.justify-center
+    +card({url: './images/card.png', title: '2022百度AI大会前夕，解读百度大脑的半年“豹变”', content: 'Facebook为未来的VR社交打造了一款逼真的虚拟头像系统，该系统的特点是，利用数百颗摄像头对人脸进行动作捕捉，并能生成与人脸相似度很高的虚拟头像，这些头像还能模仿人脸的大量表情。'})
+    +card({url: './images/card.png', title: '2022百度AI大会前夕，解读百度大脑的半年“豹变”', content: 'Facebook为未来的VR社交打造了一款逼真的虚拟头像系统，该系统的特点是，利用数百颗摄像头对人脸进行动作捕捉，并能生成与人脸相似度很高的虚拟头像，这些头像还能模仿人脸的大量表情。'})
+    +card({url: './images/card.png', title: '2022百度AI大会前夕，解读百度大脑的半年“豹变”', content: 'Facebook为未来的VR社交打造了一款逼真的虚拟头像系统，该系统的特点是，利用数百颗摄像头对人脸进行动作捕捉，并能生成与人脸相似度很高的虚拟头像，这些头像还能模仿人脸的大量表情。'})
+    +card({url: './images/card.png', title: '2022百度AI大会前夕，解读百度大脑的半年“豹变”', content: 'Facebook为未来的VR社交打造了一款逼真的虚拟头像系统，该系统的特点是，利用数百颗摄像头对人脸进行动作捕捉，并能生成与人脸相似度很高的虚拟头像，这些头像还能模仿人脸的大量表情。'})

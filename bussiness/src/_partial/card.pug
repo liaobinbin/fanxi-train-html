@@ -1,0 +1,5 @@
+mixin card(data)
+  .flex.flex-col.w-87
+    img.img-card.drop-shadow(class="hover:scale-95 transition-transform" src=data.url alt=data.title)
+    h3= data.title
+    p= data.content
