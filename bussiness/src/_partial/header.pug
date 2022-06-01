@@ -1,0 +1,25 @@
+header
+  nav(class='bg-[#252429]')
+    .max-w-7xl.mx-auto.px-2(class='sm:px-6 lg:px-8')
+      .relative.flex.items-center.justify-between.h-18
+        .absolute.inset-y-0.right-0.flex.items-center(class='sm:hidden')
+          // Mobile menu button
+          button.inline-flex.items-center.justify-center.p-2.text-gray-400(type='button' class='hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white' aria-controls='mobile-menu' aria-expanded='false')
+            span.sr-only Open main menu
+            img.block(src="./images/collpse.svg", alt="logo")
+            //
+              Icon when menu is open.
+              Heroicon name: outline/x
+              Menu open: "block", Menu closed: "hidden"
+            svg.hidden.h-6.w-6(xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' aria-hidden='true')
+              path(stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12')
+        .flex-1.flex.items-center(class='sm:items-stretch sm:justify-start md:justify-between')
+          a.flex-shrink-0.flex.items-center(href="#")
+            img.block.h-9.w-auto.mr-4(src='./images/logo.svg' alt='logo')
+            h1.text-white 企业站
+
+          .hidden(class='sm:block sm:ml-6')
+            .flex.space-x-20
+              a.text-gray-300.text-white.px-1.py-2.rounded-md.text-sm.font-medium(href='#' aria-current='page') 首页
+              a.text-gray-300.px-1.py-2.rounded-md.text-sm.font-medium(href='#' ) 新闻列表页
+              a.text-gray-300.px-1.py-2.rounded-md.text-sm.font-medium(href='#' ) 关于我们 
