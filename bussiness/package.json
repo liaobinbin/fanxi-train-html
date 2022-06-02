@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "parcel src/index.pug",
-    "build": "parcel build src/index.pug --dist-dir prod",
+    "build": "parcel build src/index.pug --dist-dir prod --public-url /fanxi-train-html/bussiness/prod/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
