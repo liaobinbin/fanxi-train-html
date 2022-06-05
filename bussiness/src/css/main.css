@@ -13,7 +13,7 @@
     width: 21.75rem;
   }
   .gap-16 {
-      gap: 4rem;
+    gap: 4rem;
   }
   .img-card {
     width: 100%;
@@ -39,8 +39,47 @@
 }
 
 .bg-scroll {
-    background-attachment: fixed;
-    background-image: url('../images/scroll-bg.png');
-    background-position: center center;
-    background-size: cover;
+  background-attachment: fixed;
+  background-image: url("../images/scroll-bg.png");
+  background-position: center center;
+  background-size: cover;
+}
+.service {
+  height: 998px;
+  background: #f6f6f6;
+}
+.service-bg {
+  width: 912px;
+  height: 1116px;
+  padding: 74px 85px 0 124px;
+  background-position: center center;
+  background-image: url("../images/service-bg.png");
+  background-size: 100% 100%;
+}
+
+@layer components {
+  .banner {
+    @apply bg-black relative;
+  }
+  .banner-text-container {
+    @apply absolute text-white flex flex-col items-center left-0 right-0 bottom-1/2;
+  }
+  .banner-title {
+    @apply text-7xl font-semibold;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.5);
+  }
+  .banner-desc {
+    @apply text-4xl pt-[28px];
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.5);
+  }
+  .banner-indicator {
+    @apply absolute flex flex-col space-y-3 left-12 bottom-1/2;
+  }
+  .banner-indicator-circle {
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+    border-color: rgba(177, 177, 177, 0.5);
+    border-radius: 50%;
+  }
 }
