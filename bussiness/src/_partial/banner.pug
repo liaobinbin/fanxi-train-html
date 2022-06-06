@@ -1,9 +1,22 @@
 mixin banner()
-  .banner
-    div.banner-text-container
-      h1.banner-title.animate-pulse 666
-      h3.banner-desc  312321321
-    img(src="./images/banner1.png")
+  .banner#banner
+    .banner-mask.opacity-0
+    ul
+      li.banner-slide
+        .banner-img(class="bg-[url('../images/banner1.png')]")
+        div.banner-text-container
+          h1.banner-title 开启互联网+ 从我们开始
+          h3.banner-desc  域名主机，网站建设，云服务器，企业邮箱一站式解决
+      li.banner-slide.hidden
+        .banner-img(class="bg-[url('../images/banner2.png')]")
+        div.banner-text-container
+          h1.banner-title 关于我们
+          h3.banner-desc  企业构建互联网信息技术服务平台，领先技术变革，提升产业效率，致力于使能软件企业引领发展，服务制造企业转型升级，为政企客户提供“多快好省”的信息技术服务。
+      li.banner-slide.hidden
+        .banner-img(class="bg-[url('../images/banner3.png')]")
+        div.banner-text-container
+          h1.banner-title 新闻中心
+          h3.banner-desc  几乎所有的伟大成就，都是团队集体协作追求远大目标的结果。这些团队的领导者挑选了团队的成员，并激励他们追求自己不敢想象的成就。
     .banner-indicator
       span.banner-indicator-circle
       span.banner-indicator-circle

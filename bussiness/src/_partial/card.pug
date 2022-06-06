@@ -2,9 +2,9 @@ mixin card(data, black)
   .flex.flex-col.w-full
     img.img-card.drop-shadow(class="hover:scale-95 transition-transform" src=data.url alt=data.title)
     if(black)
-      h3.text-base.font-semibold.mt-9(class="md:text-xl")= data.title
+      h3.text-base.font-semibold.mt-9(class="md:text-xl animate-fadeInRight")= data.title
       p.mt-4(class="text-sm text-[#353535] md:mt-7")= data.content
     else 
-      h3.text-base.font-semibold.mt-9.text-white(class="md:text-xl")= data.title
-      p.mt-4(class="text-sm text-white md:mt-7")= data.content
+      h3.text-base.font-semibold.mt-9.text-white(class="md:text-xl animate-fadeInRight")= data.title
+      p.mt-4(class="text-sm text-white md:mt-7 animate-fadeIn")= data.content
  
