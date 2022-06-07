@@ -7,7 +7,7 @@
 function Banner(elementId) {
   let bannerElement = document.getElementById(elementId)
   this.current = 0
-  this.timeout = null;
+  this.interval = null;
   if (bannerElement) {
     this.element = bannerElement
     this.mask = bannerElement.childNodes[0]
@@ -22,11 +22,18 @@ function Banner(elementId) {
  * Bind the event
  * */
 Banner.prototype.init = function() {
-  this.element.addEventListener('click', () => { this.switchMask() })
+  this.element.addEventListener('mouseenter', () => { this.pause() })
+  this.element.addEventListener('mouseout', () => { this.start() })
 }
 
 Banner.prototype.getMask = function() {
   return this.mask
+}
+
+Banner.prototype.pause = function(){
+  if(this.interval){
+    clearInterval(this.interval)
+  }
 }
 
 Banner.prototype.switchMask = function() {
@@ -56,18 +63,27 @@ Banner.prototype.goNext = function(order) {
 Banner.prototype.check = function() {
   if (!this.element) {
     console.warn('banner element not exist!')
+    return false;
   }
+  return true;
 }
 
 Banner.prototype.start = function() {
-  this.timeout = setInterval(() => {
+  if(!this.check()){
+    return
+  }
+  if(this.interval){
+    clearInterval(this.interval)
+  }
+  this.interval = setInterval(() => {
     this.switchMask()
     this.goNext()
   }, 5000)
 }
 
 
-window.onload = () => {
+window.onload = ()=>{
   const banner = new Banner('banner')
   banner.start()
+  new WOW().init()
 }

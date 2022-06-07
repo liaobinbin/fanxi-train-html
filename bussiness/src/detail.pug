@@ -1,0 +1,15 @@
+extends _partial/layout.pug
+include _partial/main-title.pug
+include _partial/header.pug
+include _partial/card.pug
+include _partial/teacher.pug
+include _partial/bg-info.pug
+include _partial/service.pug
+
+block pagetitle
+    title 新闻详情-企业站
+block body
+  +header(false)
+block main
+    section.py-8.max-w-7xl.mx-auto(class="md:px-10")
+        +maintitle({title: '新闻详情页', eng: 'News Details page'}, true)

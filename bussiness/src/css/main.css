@@ -12,47 +12,49 @@
   .img-card {
     width: 100%;
   }
+  }
+
+.context {
+  min-height: calc(100vh - 192.5px);
+}
+
+.wow {
+  visibility: hidden;
+}
+
+
+@layer components {
   .text-outline {
-    font-size: 5rem;
+    @apply text-[32px] md:text-[80px];
     line-height: 1.25em;
     color: transparent;
     text-stroke: 1px #d9d9d9;
     -webkit-text-stroke: 1px #d9d9d9;
     -moz-text-stroke: 1px #d9d9d9;
   }
+
   .text-outline-black {
     text-stroke: 1px #353535;
     -webkit-text-stroke: 1px #353535;
     -moz-text-stroke: 1px #353535;
   }
-}
+  .service {
+    @apply h-[500px] md:h-[623px] bg-[#f6f6f6]
+  }
+  .service-bg {
+    @apply p-[27px] md:w-[570px] md:h-[697.5px] md:p-[46.25px_53px_0_77.5px] bg-center;
+    background-image: url("../images/service-bg.png");
+    background-size: 100% 100%;
+  }
 
-.context {
-  min-height: calc(100vh - 230px);
-}
-
-.service {
-  height: 623px;
-  background: #f6f6f6;
-}
-.service-bg {
-  width: 570px;
-  height: 697.5px;
-  padding: 46.25px 53px 0 77.5px;
-  background-position: center center;
-  background-image: url("../images/service-bg.png");
-  background-size: 100% 100%;
-}
-
-@layer components {
   .banner {
-    @apply bg-black relative h-[500px];
+    @apply bg-black relative h-[270] sm:h-[500px];
   }
   .banner-text-container {
     @apply absolute text-white left-0 right-0 bottom-0;
   }
   .banner-slide {
-    @apply relative h-[500px]
+    @apply relative h-[270] md:h-[500px];
   }
 
   .banner-img {
@@ -60,7 +62,7 @@
   }
 
   .banner-title {
-    @apply text-5xl font-semibold;
+    @apply text-2xl md:text-5xl font-semibold;
     text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.5);
   }
   .banner-mask {
@@ -68,11 +70,11 @@
   }
 
   .banner-desc {
-    @apply text-xl pt-[28px] px-[130px];
+    @apply text-[10px] md:text-xl pt-[6px] pb-[46px] px-[30px] md:pt-[28px] md:px-[130px] md:pb-0;
     text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.5);
   }
   .banner-indicator {
-    @apply absolute flex flex-col space-y-3 left-12 bottom-1/2 z-20;
+    @apply absolute flex flex-col space-y-3 left-2 md:left-12 md:bottom-1/2 bottom-1/3 z-20;
   }
   .banner-indicator-circle {
     width: 12px;

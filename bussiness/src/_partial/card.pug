@@ -1,9 +1,9 @@
 mixin card(data, black)
-  .flex.flex-col.w-full
-    img.img-card.drop-shadow(class="hover:scale-95 transition-transform" src=data.url alt=data.title)
+  a.flex.flex-col.w-full(href="./detail.pug")
+    img.img-card.drop-shadow(class="hover:scale-95 transition-transform wow fadeIn" src=data.lazy alt=data.title data-src=data.url)
     if(black)
-      h3.text-base.font-semibold(class="md:text-[12.5px] md:mt-[22.5px] animate-fadeInRight")= data.title
-      p.mt-4(class="text-[8.75px] text-[#353535] md:mt-[17.5px]")= data.content
+      h3.text-base.font-semibold(class="md:text-[12.5px] md:mt-[22.5px] mt-2 wow fadeInRight")= data.title
+      p.mt-4(class="text-[8.75px] text-[#353535] md:mt-[17.5px] wow fadeIn")= data.content
     else 
-      h3.text-base.font-semibold.text-white(class="md:text-[12.5px] md:mt-[22.5px] animate-fadeInRight")= data.title
-      p.mt-4(class="text-[8.75px] text-white md:mt-[17.5px] animate-fadeIn")= data.content
+      h3.text-base.font-semibold.text-white(class="md:text-[12.5px] md:mt-[22.5px] mt-2 wow fadeInRight")= data.title
+      p.mt-4(class="text-[8.75px] text-white md:mt-[17.5px] wow fadeIn")= data.content
