@@ -1,8 +1,8 @@
 mixin bginfo(title, content)
-  .bg-fixed.bg-center.bg-cover(class="h-[520px] bg-[url('../images/scroll-bg.png')]")
+  .bg-fixed.bg-center.bg-cover(class=" bg-[url('../images/scroll-bg.png')]")
     div(class="bg-black/70")
-      .max-w-7xl.mx-auto.flex.flex-col.items-center.justify-center.px-2(class="h-[520px]")
-        h1.text-center.text-5xl.text-white= title
-        span.block.bg-primary.my-8.w-32(class="h-1.5")
+      .max-w-7xl.mx-auto.flex.flex-col.items-center.justify-center.px-2(class="md:px-10 h-[325px]")
+        h1.text-center.text-2xl.text-white= title
+        span.block.bg-primary.my-5.w-20(class="h-1")
         each item in content 
-          p.text-white.mt-4.indent-8= item
+          p.text-white.mt-4.indent-8(class="text-[15px]")= item

@@ -13,7 +13,7 @@
     width: 100%;
   }
   .text-outline {
-    font-size: 8rem;
+    font-size: 5rem;
     line-height: 1.25em;
     color: transparent;
     text-stroke: 1px #d9d9d9;
@@ -28,17 +28,17 @@
 }
 
 .context {
-  min-height: calc(100vh - 19.875rem);
+  min-height: calc(100vh - 230px);
 }
 
 .service {
-  height: 998px;
+  height: 623px;
   background: #f6f6f6;
 }
 .service-bg {
-  width: 912px;
-  height: 1116px;
-  padding: 74px 85px 0 124px;
+  width: 570px;
+  height: 697.5px;
+  padding: 46.25px 53px 0 77.5px;
   background-position: center center;
   background-image: url("../images/service-bg.png");
   background-size: 100% 100%;
@@ -46,13 +46,13 @@
 
 @layer components {
   .banner {
-    @apply bg-black relative h-[800px];
+    @apply bg-black relative h-[500px];
   }
   .banner-text-container {
-    @apply absolute text-white flex flex-col items-center left-0 right-0 bottom-1/2;
+    @apply absolute text-white left-0 right-0 bottom-0;
   }
   .banner-slide {
-    @apply relative h-[800px]
+    @apply relative h-[500px]
   }
 
   .banner-img {
@@ -60,7 +60,7 @@
   }
 
   .banner-title {
-    @apply text-7xl font-semibold;
+    @apply text-5xl font-semibold;
     text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.5);
   }
   .banner-mask {
@@ -68,7 +68,7 @@
   }
 
   .banner-desc {
-    @apply text-4xl pt-[28px] px-[212px];
+    @apply text-xl pt-[28px] px-[130px];
     text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.5);
   }
   .banner-indicator {

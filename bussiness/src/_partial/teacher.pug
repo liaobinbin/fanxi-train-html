@@ -2,8 +2,8 @@ mixin teacher(data)
     .relative 
         img(src=data.img, alt="teacher pic" class="hover:scale-95 transition")
         .absolute.flex.flex-col.bottom-12.left-0.right-0.text-white.items-center
-            h3.text-5xl.text-center= data.name
-            span.mt-6= data.desc
-            a.flex.items-center.mb-8.mt-12(href="#") 
-                img(src="./images/arrow.svg", alt="->")
-                span.ml-4 More information
+            h3.text-2xl.text-center= data.name
+            span.mt-4(class="text-[12.5px]")= data.desc
+            a.flex.items-center.mb-5.mt-6(class="text-[12.5px]" href="#")
+                img(src="./images/arrow.svg", class="w-[15px] h-[15px]" alt="->")
+                span.ml-2 More information
