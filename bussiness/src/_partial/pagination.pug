@@ -1,0 +1,22 @@
+.pagintaion.flex.max-w-7xl.mx-auto.justify-center.items-center(class="md:px-10 text-[8.75px] text-[#8b8b8b] mt-4")
+  .select.relative.border.flex.justify-center.items-center.mr-2.cursor-pointer(class="w-[62.5px] h-[20px]") 8条/页
+    ul.hidden.absolute.bottom-0
+      li 8条/页
+      li 16条/页
+      li 32条/页
+
+  ul.nums.flex
+    li.nums-item.start <
+    li.nums-item.active 1
+    li.nums-item 2
+    li.nums-item 3
+    li.nums-item 4
+    li.nums-item 5
+    li.nums-item 6
+    li.nums-item ...
+    li.nums-item 100
+    li.nums-item.end >
+  .go.ml-2
+    span.mr-2  前往
+    input(class="border w-[35px] h-[20px] text-center" value="1")
+    span.ml-2  页

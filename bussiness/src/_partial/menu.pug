@@ -13,10 +13,17 @@ mixin menu()
 
         .hidden(class='sm:block sm:ml-6')
           .flex.space-x-20(class="mr-[175] text-[9px]" )
-            a.text-gray-300.text-white.px-1.py-2.rounded-md.font-medium(href='index.pug' aria-current='page') 首页
+            a.text-gray-300.text-white.px-1.py-2.rounded-md.font-medium.menu-item(href='index.pug' aria-current='page') 首页
             a.text-gray-300.px-1.py-2.rounded-md.font-medium(href='news.pug' ) 新闻列表页
             a.text-gray-300.px-1.py-2.rounded-md.font-medium(href='about.pug' ) 关于我们
-  #mobile-menu.invisible.absolute.h-screen.top-0(class="left-0 right-0 flex justify-end fadeInRight")
+  #mobile-menu.invisible.absolute.h-screen.top-0(class="left-0 right-0 flex justify-end fadeInRight z-50")
     .bg-secondary.h-full(class="w-[248px]")
       svg#close-button.block.h-6.w-6.text-white.absolute.right-2.top-2.padding-4(xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' aria-hidden='true')
         path(stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12')
+      ul(class="mx-[27px]")
+        li(class="px-[9px]")
+          a.text-gray-300.text-white.rounded-md.font-medium.menu-item(href='index.pug' aria-current='page' class="block py-[50px]") 首页
+        li(class="px-[9px]")
+          a.text-gray-300.px-1.py-2.rounded-md.font-medium(href='news.pug'  class="block py-[50px]") 新闻列表页
+        li(class="px-[9px]")
+          a.text-gray-300.px-1.py-2.rounded-md.font-medium(href='about.pug'  class="block py-[50px]") 关于我们

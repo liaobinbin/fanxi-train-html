@@ -13,3 +13,21 @@ block body
 block main
     section
         +maintitle({title: '关于我们', eng: 'About us'}, true)
+        .grid.max-w-7xl.mx-auto(class="md:px-10 md:grid-cols-2 md:mt-[34px] mt-[16px] gap-4")
+            .mapouter(class="relative text-right h-full w-full")
+                .gmap_canvas(class="overflow-hidden md:h-full w-full h-[240px]")
+                  iframe#gmap_canvas(width='100%' height='100%' src='https://maps.google.com/maps?q=%E5%A4%A9%E5%BA%9C%E8%BD%AF%E4%BB%B6%E5%9B%ADC12&t=&z=15&ie=UTF8&iwloc=&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0')
+            .about(class="p-[18px] pt-0 md:p-0 text-[#353535]" )
+                h3.font-semibold(class="text-[15px] mb-[15px] text-black")  一家专注系统高端定制开发的公司
+                p(class="text-[8.75px]") 互联网指的是是网络与网络之间所串连成的庞大网络，这些网络以一组通用的协议相连，形成逻辑上的单一巨大国际网络。互联网始于1969年美国的阿帕网。这种将计算机网络互相联接在一起的方法可称作“网络互联”，在这基础上发展出覆盖全世界的全球性互联网络称互联网，即是互相连接一起的网络结构。
+                p(class="text-[8.75px]") 我们出色的专业开发团队扎实的技术支持，优质高效的服务意识和丰厚的资源优势，提供专业的网站建设，微信小程序，APP开发，等技术服务。成果，专注于为客户提供专业有效的互联网系统解决方案。
+                .about-info(class="text-[8.75px] mt-[15px] flex flex-col space-y-2")
+                    .about-info-item.flex.items-center
+                        img(src="./images/location.svg" class="w-[10px] h-auto mr-2")
+                        span    地址：中国山东省青岛市市南区某某中路20号
+                    .about-info-item.flex.items-center
+                        img(src="./images/email.svg" class="w-[10px] h-auto mr-2")
+                        span    邮箱：1370XXX171@qq.com
+                    .about-info-item.flex.items-center
+                        img(src="./images/phone.svg" class="w-[10px] h-auto mr-2")
+                        span    电话：0591-88888888

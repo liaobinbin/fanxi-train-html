@@ -20,7 +20,7 @@ function Banner(elementId) {
 /**
  * Bind the event
  * */
-Banner.prototype.init = function () {
+Banner.prototype.init = function() {
   this.element.addEventListener("mouseenter", () => {
     this.pause();
   });
@@ -29,17 +29,17 @@ Banner.prototype.init = function () {
   });
 };
 
-Banner.prototype.getMask = function () {
+Banner.prototype.getMask = function() {
   return this.mask;
 };
 
-Banner.prototype.pause = function () {
+Banner.prototype.pause = function() {
   if (this.interval) {
     clearInterval(this.interval);
   }
 };
 
-Banner.prototype.switchMask = function () {
+Banner.prototype.switchMask = function() {
   // 先设置Mask透明度为1
   // css 动画结束后，再设置为0
   this.mask.style.opacity = 1;
@@ -49,7 +49,7 @@ Banner.prototype.switchMask = function () {
   }, 1000);
 };
 
-Banner.prototype.goNext = function (order) {
+Banner.prototype.goNext = function(order) {
   const timeout = setTimeout(() => {
     let next = order ?? this.current + 1;
     if (next === this.slides.length) {
@@ -63,7 +63,7 @@ Banner.prototype.goNext = function (order) {
   }, 1000);
 };
 
-Banner.prototype.check = function () {
+Banner.prototype.check = function() {
   if (!this.element) {
     console.warn("banner element not exist!");
     return false;
@@ -71,7 +71,7 @@ Banner.prototype.check = function () {
   return true;
 };
 
-Banner.prototype.start = function () {
+Banner.prototype.start = function() {
   if (!this.check()) {
     return;
   }
@@ -88,25 +88,29 @@ window.onload = () => {
   const banner = new Banner("banner");
   banner.start();
 
-  const m = function (e) {
+  const m = function(e) {
     e.preventDefault();
   };
 
   const menu = document.getElementById("mobile-menu");
   const collpse = document.getElementById("collpse");
-  collpse.addEventListener("click", () => {
-    // open mobile menu
-    document.body.style.overflow = "hidden";
-    document.addEventListener("touchmove", m, false);
-    menu.style.visibility = "visible";
-  });
+
+  if (collpse) {
+    collpse.addEventListener("click", () => {
+      // open mobile menu
+      document.body.style.overflow = "hidden";
+      document.addEventListener("touchmove", m, false);
+      menu.style.visibility = "visible";
+    });
+  }
 
   const close = document.getElementById("close-button");
-  close.addEventListener("click", () => {
-    document.body.style.overflow = "";
-    document.removeEventListener("touchmove", m, false);
-    menu.style.visibility = "";
-  });
-
+  if (close) {
+    close.addEventListener("click", () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("touchmove", m, false);
+      menu.style.visibility = "";
+    });
+  }
   new WOW().init();
 };
