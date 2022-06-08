@@ -9,25 +9,10 @@ function getNewsList(page = 1, limit = 8) {
     { params: { page, limit } }
   );
 }
-function getNewsItem(id) {
-  return request.get(
-    `https://61e80b15e32cd90017acbfb7.mockapi.io/enterprise/news/${id}`
-  );
-}
 
-function getParams() {
-  const urlParams = new URLSearchParams(location.search);
-  return {
-    page: Number(urlParams.get("page")) || 1,
-    limit: Number(urlParams.get("limit")) || 8,
-  };
-}
-
-const params = getParams() || { page: 1, limit: 8 };
-getNewsList(params.page, params.limit)
+getNewsList(1, 4)
   .then((res) => {
     renderInfoItem(res.items);
-    renderPagination(res.count);
   })
   .catch((e) => {
     console.error(e);
@@ -58,8 +43,4 @@ function renderInfoItem(data) {
   });
 
   news.replaceChildren(...domStruct);
-}
-function renderPagination(count) {
-  const pagintaion = document.querySelector(".pagintaion");
-  console.log(count);
 }
