@@ -1,0 +1,23 @@
+{
+  "name": "danmu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Boiao Ch <doubiliao@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^28.1.2",
+    "jest-environment-jsdom": "^28.1.2",
+    "jquery": "^3.6.0",
+    "jsdom": "^20.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFiles": [
+      "<rootDir>/tests/test-env.js"
+    ]
+  }
+}
